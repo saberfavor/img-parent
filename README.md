@@ -1,25 +1,25 @@
 # Redis使用初阶
 + **redis解释**：
 1. redis 是一个基于 key-value 形式进行存储的内存型数据库。
-1.1  数据存储方式为 key-value 
-1.2 数据存储在内存中,优点:效率高.理论值:每秒 10K 数据读取
-1.3 定位: 数据库软件
+	+ 数据存储方式为 key-value 
+	+ 数据存储在内存中,优点:效率高.理论值:每秒 10K 数据读取
+	+ 定位: 数据库软件
 2. reids 是一个 NoSql 数据库
-2.1 字面理解: 不使用 SQL 命令操作数据库软件
-2.2 NoSQL : 英文全称 Not Only SQL ,表示在应用程序开发时,不是必须使用关系型数据库,可以使用 NoSQl 替代关系型数据库的部分功能
-2.3 目前 NoSQL 不能完全替代关系型数据库.使用关系型数据库结合 NoSQl 数据库进行完成项目
-	- 当数据比较复杂时不适用于 NoSQL 数据库
-	- 关系型数据库依然做为数据存储的主要软件.
-	- NoSQL 数据库当作缓存工具来使用.
-		1 把某些使用频率较高的内容不仅仅存储到关系型数据库中还存储到 NoSQL 数据中
-		2 考虑到: NoSQL 和关系型数据库数据同步的问题
+	+ 字面理解: 不使用 SQL 命令操作数据库软件
+	+ NoSQL : 英文全称 Not Only SQL ,表示在应用程序开发时,不是必须使用关系型数据库,可以使用 NoSQl 替代关系型数据库的部分功能
+	+ 目前 NoSQL 不能完全替代关系型数据库.使用关系型数据库结合 NoSQl 数据库进行完成项目
+		1. 当数据比较复杂时不适用于 NoSQL 数据库
+		2. 关系型数据库依然做为数据存储的主要软件.
+		3. NoSQL 数据库当作缓存工具来使用.
+			+ 把某些使用频率较高的内容不仅仅存储到关系型数据库中还存储到 NoSQL 数据中
+			+ 考虑到: NoSQL 和关系型数据库数据同步的问题
 3. Redis 持久化策略
-3.1 rdb
-	- 每隔一定时间后把内存中数据持久化到 dump.rdb 文件中
-	- 缺点:数据过于集中, 可能导致最后的数据没有持久化到 dump.rdb 中,解决办法:使用命令:SAVE 或 BGSAVE 手动持久化.
-3.2 aof
-	- 监听 Redis 的日志文件,监听如果发现执行了修改,删除,新增命令.立即根据这条命令把数据持久化.
-	-  缺点:效率降低	
+	+ rdb
+		1. 每隔一定时间后把内存中数据持久化到 dump.rdb 文件中
+		2. 缺点:数据过于集中, 可能导致最后的数据没有持久化到 dump.rdb 中,解决办法:使用命令:SAVE 或 BGSAVE 手动持久化.
+	+ aof
+		1. 监听 Redis 的日志文件,监听如果发现执行了修改,删除,新增命令.立即根据这条命令把数据持久化.
+		2.  缺点:效率降低	
 + **redis 数据类型**:
 1. String
 2. Hash
@@ -47,18 +47,18 @@
 + **Junit 4**:
 1. 单元测试插件.
 2. 使用 Junit 主要目的
-2.1 可以不用编写 main 方法
+	- 可以不用编写 main 方法
 3. 要求:
-3.1 方法必须是 public void 且没有参数
-3.2 当前项目不要有 Test 否则@Test 引用自己 Test 类
+	- 方法必须是 public void 且没有参数
+	- 当前项目不要有 Test 否则@Test 引用自己 Test 类
 4. 实现步骤:(Maven)
-4.1 在 pom.xml 中依赖 junit4
-<dependency>
-<groupId>junit</groupId>
-<artifactId>junit</artifactId>
-<version>4.12</version>
-</dependency>
-4.2 在需要测试的方法上添加@Test
-4.2.1 @Before 在@Test 之前执行
-4.2.2 @After 在@Test 之后执行.
-4.2.3 如果有多个@Test 每个@Test 前后都会执行@Before 和@After
+	- 在 pom.xml 中依赖 junit4
+		<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.12</version>
+		</dependency>
+- 在需要测试的方法上添加@Test
+	1. @Before 在@Test 之前执行
+	2. @After 在@Test 之后执行.
+    3. 如果有多个@Test 每个@Test 前后都会执行@Before 和@After
