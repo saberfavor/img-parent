@@ -1,0 +1,9 @@
+com\bjsxt\pojo\ImgExample$Criteria.class
+com\bjsxt\mapper\ImgMapper.class
+com\bjsxt\pojo\Img.class
+com\bjsxt\service\ImgService.class
+com\bjsxt\pojo\ImgExample.class
+com\bjsxt\service\impl\ImgServiceImpl.class
+com\bjsxt\pojo\ImgExample$GeneratedCriteria.class
+com\bjsxt\pojo\ImgExample$Criterion.class
+com\bjsxt\controller\ImgController.class
