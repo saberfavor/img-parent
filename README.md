@@ -37,13 +37,16 @@
 + **Jedis**:
 1. Jedis 是 Redis 客户端工具 jar
 2. 使用非集群版示例代码
+```java
 	Jedis jedis = new Jedis("127.0.0.1", 6379);
+	
 	// 新增或修改
 	 String result = jedis.set("address", "成都");
 	// 查询
 	 String result1 = jedis.get("address");
-	// 删除// 
-   Long index = jedis.del("address");
+	// 删除
+	Long index = jedis.del("address");
+   ```
 + **Junit 4**:
 1. 单元测试插件.
 2. 使用 Junit 主要目的
@@ -53,11 +56,13 @@
 	- 当前项目不要有 Test 否则@Test 引用自己 Test 类
 4. 实现步骤:(Maven)
 	- 在 pom.xml 中依赖 junit4
+	- ```
 		<dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>
 		<version>4.12</version>
 		</dependency>
+		```
 - 在需要测试的方法上添加@Test
 	1. @Before 在@Test 之前执行
 	2. @After 在@Test 之后执行.
